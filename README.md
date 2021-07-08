@@ -89,11 +89,24 @@ python3 tools/cityscapes_save_predictions.py ./configs/efficientPS_singlegpu_sam
 ```
 This means config file=./configs/efficientPS_singlegpu_sample.py, checkpoint = work_dirs/checkpoints/epoch_50.pth, input_folder_images=./datatest/leftImg8bit/test, ouput_folder=./infererence_singlegpu_result50 
 
-Note: The folder containing images for inferencing must follow the structure required by EfficientPS where inside inside the folder containing images for example in our case ./datatest/leftImg8bit/test/, there are the list of cities folder and inside each city folder there are images.
+Note: The folder containing images for inferencing must follow the structure required by EfficientPS where inside inside the folder containing images, there are the list of cities folder, inside each city folder there are images. For example in our folder_image ./datatest/leftImg8bit/test/, we have the following structure where berlin, bielefeld, bonn, etc. are the name of the cities the images are taken from.
 
 <p>
-<img width="850" src="tree structure of leftImg8bit.JPG">
+<img width="300" src="tree structure of leftImg8bit.JPG">
 </p>
+
+## Inference result examples
+I got 0.6 FPS for inference time using a single gpu. Below are some inference examples from the leftImg8bit/test set:
+
+<p>
+<img width="416" src="berlin_000000_000019_panoptic.png">
+<img width="416" src="berlin_000001_000019_panoptic.png">
+</p>
+<p>
+<img width="416" src="berlin_000002_000019_panoptic.png">
+<img width="416" src="berlin_000003_000019_panoptic.png">
+</p>
+
 
 ## Contact
 Feel free to contact me if you have any issue. 
