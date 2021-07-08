@@ -87,7 +87,7 @@ Note: The author only provides single scale evaluation script.
 Using pretrained weights from epoch_50 on val set, achieve PQ(all) = 47.0%, PQ(things) = 41.4% and PQ(stuff) = 51.0%
 
 <p>
-<img width="850" src="50 epochs results.JPG">
+<img width="850" src="images/50 epochs results.JPG">
 </p>
 
 ## Inference:  
@@ -103,19 +103,19 @@ This means config file=./configs/efficientPS_singlegpu_sample.py, checkpoint = w
 Note: The folder containing images for inferencing must follow the structure required by EfficientPS where inside inside the folder containing images, there are the list of cities folder, inside each city folder there are images. For example in our folder_image ./datatest/leftImg8bit/test/, we have the following structure where berlin, bielefeld, bonn, etc. are the name of the cities the images are taken from.
 
 <p>
-<img width="300" src="tree structure of leftImg8bit.JPG">
+<img width="300" src="images/tree structure of leftImg8bit.JPG">
 </p>
 
 ## Inference result examples
 I got 0.6 FPS for inference time using a single gpu. Below are some inference examples from the leftImg8bit/test set:
 
 <p>
-<img width="416" src="berlin_000000_000019_panoptic.png">
-<img width="416" src="berlin_000001_000019_panoptic.png">
+<img width="416" src="images/berlin_000000_000019_panoptic.png">
+<img width="416" src="images/berlin_000001_000019_panoptic.png">
 </p>
 <p>
-<img width="416" src="berlin_000002_000019_panoptic.png">
-<img width="416" src="berlin_000003_000019_panoptic.png">
+<img width="416" src="images/berlin_000002_000019_panoptic.png">
+<img width="416" src="images/berlin_000003_000019_panoptic.png">
 </p>
 
 
