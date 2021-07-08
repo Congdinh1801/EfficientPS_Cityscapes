@@ -1,7 +1,9 @@
-#  <div align="center">Tutorial to train YOLOv5 for FLIRdataset</div>
+#  <div align="center">Tutorial to train EfficientPS for Cityscapes dataset </div>
 
 ## Installation
-You will need miniconda or conda for virtualenv. If you haven't installed miniconda, here's a helpful link to install it https://www.youtube.com/watch?v=Avx_FYdFBcc
+You will need miniconda or conda to create virtualenv for this tutorial. If you haven't installed miniconda, here's a helpful link to install it https://www.youtube.com/watch?v=Avx_FYdFBcc
+
+Install and setup dependencies for EfficientPS as follows:
 
 ```
 git clone https://github.com/DeepSceneSeg/EfficientPS.git
@@ -16,7 +18,7 @@ python setup.py develop
 ```
 
 
-## Download cityscapes dataset using scripts 
+## Download Cityscapes dataset using scripts 
 Link to the tutorial (https://towardsdatascience.com/download-city-scapes-dataset-with-script-3061f87b20d7)
 
 ```
@@ -27,7 +29,7 @@ wget --load-cookies cookies.txt --content-disposition https://www.cityscapes-dat
 You will probably need packageID number 1 and number 3 which are gtFine_trainvaltest.zip and leftImg8bit_trainvaltest.zip for this tutorial
 
 
-## Create symlink (symbolic link) to the dataset root to $EfficientPS/data
+## Create symlink (symbolic link) of the dataset root to $EfficientPS/data
 It is recommended to symlink the dataset root to $EfficientPS/data.
 
 Change /home/user/ to whatever path you have on your local machine
@@ -37,7 +39,7 @@ ln -s /home/user/EfficientPS/datatest/gtFine /home/user/EfficientPS/data
 ```
 
 
-## Convert cityscapes dataset to correct efficientPS format
+## Convert Cityscapes dataset to correct efficientPS format
 Change /home/user/ to whatever path you have on your local machine
 ```
 python tools/convert_cityscapes.py /home/diho0521/EfficientPS/datatest ./data/cityscapes/
@@ -78,6 +80,13 @@ This means CONFIG file=./configs/efficientPS_multigpu_sample.py, GPU_NUM=4 (use 
 python3 tools/test.py ./configs/efficientPS_singlegpu_sample.py work_dirs/checkpoints/epoch_50.pth --eval panoptic
 ```
 work_dirs/checkpoints/epoch_50.pth means use the pretrained weights from epoch_50.
+
+## Performance
+Achieve PQ(all) = 47.0%, PQ(things) = 41.4% and PQ(stuff) = 51.0%
+
+<p>
+<img width="850" src="50 epochs results.JPG">
+</p>
 
 ## Inference:  
 
