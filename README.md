@@ -74,15 +74,17 @@ For example:
 ./tools/dist_train.sh ./configs/efficientPS_multigpu_sample.py 4 --work_dir work_dirs/checkpoints --validate --resume_from work_dirs/checkpoints/epoch_50.pth --validate 
 ```
 This means CONFIG file=./configs/efficientPS_multigpu_sample.py, GPU_NUM=4 (use 4 gpus) and we use resume_from option to continue training. By using 4 gpus you can accelerate the training process 4 times faster.
-## Evaluation Procedure on test set
+## Evaluation Procedure on validation set
 
 ```
 python3 tools/test.py ./configs/efficientPS_singlegpu_sample.py work_dirs/checkpoints/epoch_50.pth --eval panoptic
 ```
 work_dirs/checkpoints/epoch_50.pth means use the pretrained weights from epoch_50.
 
+Note: The author only provides single scale evaluation script.
+
 ## Performance
-Achieve PQ(all) = 47.0%, PQ(things) = 41.4% and PQ(stuff) = 51.0%
+Using pretrained weights from epoch_50 on val set, achieve PQ(all) = 47.0%, PQ(things) = 41.4% and PQ(stuff) = 51.0%
 
 <p>
 <img width="850" src="50 epochs results.JPG">
